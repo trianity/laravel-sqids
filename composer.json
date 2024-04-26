@@ -1,0 +1,79 @@
+{
+    "name": "trianity/hashids",
+    "description": "A Hashids bridge for Laravel",
+    "keywords": [
+        "hashids",
+        "laravel"
+    ],
+    "license": "MIT",
+    "version": "11.0.2",
+    "authors": [
+        {
+            "name": "Vincent Klaiber",
+            "email": "hello@doubledip.se"
+        },
+		{
+			"name": "Holbok István",
+			"email": "holbok@gmail.com"
+		}
+    ],
+    "require": {
+        "php": "^8.1|^8.3|^8.3",
+        "graham-campbell/manager": "^5.0",
+        "hashids/hashids": "^4.1",
+        "illuminate/contracts": "^9.0|^10.0|^11.0",
+        "illuminate/support": "^9.0|^10.0|^11.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.2",
+        "larastan/larastan": "^2.0",
+        "nunomaduro/phpinsights": "^2.6",
+        "orchestra/testbench": "^7.0|^8.5|^9.0",
+        "pestphp/pest": "^2.9"
+    },
+    "config": {
+        "preferred-install": "dist",
+		"sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "11.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Trianity\\Hashids\\Providers\\PackageServiceProvider"
+            ],
+            "aliases": {
+                "Hashids": "Trianity\\Hashids\\Facades\\Hashids"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Trianity\\Hashids\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Trianity\\Hashids\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "phpstan": [
+            "./vendor/bin/phpstan analyse"
+        ],
+        "pint": [
+            "./vendor/bin/pint"
+        ]
+    },
+    "scripts-descriptions": {
+        "phpstan": "Run PHPStan static analysis against your application.",
+        "pint": "Run Laravel Pint to correct syntaxes."
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
