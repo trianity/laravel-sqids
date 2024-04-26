@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Trianity\Hashids\Tests\PackageTestCase;
+use Trianity\Sqids\Tests\PackageTestCase;
 
 uses(PackageTestCase::class)->in(__DIR__);
 

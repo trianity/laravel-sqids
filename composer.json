@@ -1,34 +1,30 @@
 {
-    "name": "trianity/hashids",
-    "description": "A Hashids bridge for Laravel",
+    "name": "trianity/laravel-sqids",
+    "description": "A Hashids / Sqids bridge for Laravel 10,11",
     "keywords": [
         "hashids",
+        "sqids",
         "laravel"
     ],
     "license": "MIT",
     "version": "11.0.2",
     "authors": [
-        {
-            "name": "Vincent Klaiber",
-            "email": "hello@doubledip.se"
-        },
 		{
 			"name": "Holbok István",
 			"email": "holbok@gmail.com"
 		}
     ],
     "require": {
-        "php": "^8.1|^8.3|^8.3",
-        "graham-campbell/manager": "^5.0",
-        "hashids/hashids": "^4.1",
-        "illuminate/contracts": "^9.0|^10.0|^11.0",
-        "illuminate/support": "^9.0|^10.0|^11.0"
+        "php": "^8.2|^8.3",
+        "ext-bcmath": "*",
+        "illuminate/contracts": "^10.0|^11.0",
+        "illuminate/support": "^10.0|^11.0",
+        "sqids/sqids": "^0.4.1"
     },
     "require-dev": {
-        "laravel/pint": "^1.2",
-        "larastan/larastan": "^2.0",
-        "nunomaduro/phpinsights": "^2.6",
-        "orchestra/testbench": "^7.0|^8.5|^9.0",
+        "laravel/pint": "^1.5",
+        "larastan/larastan": "^2.9",
+        "orchestra/testbench": "^8.5|^9.0",
         "pestphp/pest": "^2.9"
     },
     "config": {
@@ -45,21 +41,21 @@
         },
         "laravel": {
             "providers": [
-                "Trianity\\Hashids\\Providers\\PackageServiceProvider"
+                "Trianity\\Sqids\\Providers\\PackageServiceProvider"
             ],
             "aliases": {
-                "Hashids": "Trianity\\Hashids\\Facades\\Hashids"
+                "Sqids": "Trianity\\Sqids\\Facades\\Sqids"
             }
         }
     },
     "autoload": {
         "psr-4": {
-            "Trianity\\Hashids\\": "src/"
+            "Trianity\\Sqids\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Trianity\\Hashids\\Tests\\": "tests/"
+            "Trianity\\Sqids\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -68,11 +64,15 @@
         ],
         "pint": [
             "./vendor/bin/pint"
+        ],
+        "test": [
+            "./vendor/bin/pest"
         ]
     },
     "scripts-descriptions": {
         "phpstan": "Run PHPStan static analysis against your application.",
-        "pint": "Run Laravel Pint to correct syntaxes."
+        "pint": "Run Laravel Pint to correct syntaxes.",
+        "test": "Run Pest test"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

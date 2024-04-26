@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Trianity\Hashids\Tests;
+namespace Trianity\Sqids\Tests;
 
 use Orchestra\Testbench\TestCase;
-use Trianity\Hashids\Providers\PackageServiceProvider;
+use Trianity\Sqids\Providers\PackageServiceProvider;
 
 class PackageTestCase extends TestCase
 {
